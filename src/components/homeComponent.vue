@@ -3,10 +3,7 @@
     <!-- banner -->
     <div class="inside-banner">
       <div class="container">
-        <span class="pull-right"
-          ><a href="index.php">Inicio</a> / </span
-        >
-        <h2>Buy, Sale & Rent</h2>
+        <h2>Inmuebles</h2>
       </div>
     </div>
     <!-- banner -->
@@ -126,13 +123,25 @@ export default {
     },
   },
   created() {
-    localStorage.setItem("code", this.$route.params.code);
-    this.buscarInfo();
+    let data = null;
+
+    if (this.$route.params.code) {
+      localStorage.setItem("code", this.$route.params.code);
+    } else {
+      data = localStorage.setItem("code", this.$route.params.code);
+    }
+
+    this.buscarInfo(data);
   },
 
   methods: {
-    buscarInfo() {
-      let code = localStorage.getItem("code", this.$route.params.code);
+    buscarInfo(data) {
+      let code = null;
+      if (data == null) {
+        code = localStorage.getItem("code");
+      } else {
+        code = data;
+      }
 
       this.$store
         .dispatch("home/getInmuebles", code)
