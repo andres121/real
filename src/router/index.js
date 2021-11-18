@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 import homeComponent from '@/components/homeComponent'
 import aboutComponent from '@/components/aboutComponent'
 import detalleComponent from '@/components/detalleComponent'
+import contactComponent from '@/components/contactComponent'
+
 
 Vue.use(VueRouter)
 
@@ -25,9 +27,15 @@ export default new VueRouter({
     },
 
     {
-      path: '/about',
+      path: '/about/:code',
       name: 'about',
       component: aboutComponent
+    },
+
+    {
+      path: '/contactanos/:code',
+      name: 'contactanos',
+      component: contactComponent
     }
   ]
 })

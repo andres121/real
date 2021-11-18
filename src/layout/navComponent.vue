@@ -17,28 +17,35 @@
         </div>
 
         <!-- Nav Starts -->
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><h2 style="color: #fff"><strong>{{configuracion.nombre}}</strong></h2></li>
-            <!-- <li><a href="about.php">About</a></li>
-            <li><a href="agents.php">Agents</a></li>
-            <li><a href="blog.php">Blog</a></li>
-            <li><a href="contact.php">Contact</a></li> -->
-          </ul>
-        </div>
+
         <!-- #Nav Ends -->
       </div>
     </div>
-    <div class="container">
-      <!-- Header Starts -->
-      <div class="header">
-        <a href="index.php"><img style="max-width:20%" :src="url + configuracion.logo" alt="Realestate" /></a>
+    <div class="inside-banner">
+      <div class="container">
+        <!-- Header Starts -->
+        <div class="header">
+          <a href="index.php"
+            ><img
+              style="max-width: 10%; max-height: 7%"
+              :src="url + configuracion.logo"
+              alt="Realestate"
+          /></a>
 
-        <ul class="pull-right">
-          <li><b-button variant="primary" @click="enlace()" >inicio</b-button></li>
-          <!-- <li><a href="buysalerent.php">Sale</a></li>
+          <ul class="pull-right">
+            <li>
+              <b-button @click="enlace('inicio')">inicio</b-button>
+            </li>
+            <li>
+              <b-button @click="enlace('nosotros')">Nosotros</b-button>
+            </li>
+            <li>
+              <b-button @click="enlace('contactanos')">Contactanos</b-button>
+            </li>
+            <!-- <li><a href="buysalerent.php">Sale</a></li>
           <li><a href="buysalerent.php">Rent</a></li> -->
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -65,8 +72,20 @@ export default {
   },
 
   methods: {
-    enlace() {
-      this.$router.push("/" + this.userdata.referral_code).catch(() => {});
+    enlace(data) {
+      if (data == "inicio") {
+        this.$router.push("/" + this.userdata.referral_code).catch(() => {});
+      }
+      if (data == "nosotros") {
+        this.$router
+          .push("/about/" + this.userdata.referral_code)
+          .catch(() => {});
+      }
+       if (data == "contactanos") {
+        this.$router
+          .push("/contactanos/" + this.userdata.referral_code)
+          .catch(() => {});
+      }
     },
   },
 };

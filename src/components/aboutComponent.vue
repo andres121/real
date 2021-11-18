@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="hero-wrap" style="background-image: url('./assets/images/bg_1.jpg')">
+    <div
+      class="hero-wrap"
+      style="background-image: url('./assets/images/bg_1.jpg')"
+    >
       <div class="overlay"></div>
       <div class="container">
         <div
@@ -13,11 +16,7 @@
           "
         >
           <div class="col-md-9 ftco-animate text-center">
-            <p class="breadcrumbs">
-              <span class="mr-2"><a href="index.html">Home</a></span>
-              <span>About</span>
-            </p>
-            <h1 class="mb-3 bread">About</h1>
+            <h1 style="color: black" class="mb-3 bread">Quiene somos?</h1>
           </div>
         </div>
       </div>
@@ -35,345 +34,19 @@
               justify-content-center
               align-items-center
             "
-            style="background-image: url(images/about.jpg)"
+            style="background-image: url()"
           >
-            <a
-              href="https://vimeo.com/45830194"
-              class="
-                icon
-                popup-vimeo
-                d-flex
-                justify-content-center
-                align-items-center
-              "
-            >
-              <span class="icon-play"></span>
-            </a>
+            <b-img class="width-img" :src="url + configuracion.logo"></b-img>
           </div>
           <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
             <div class="heading-section heading-section-wo-line mb-5 pl-md-5">
               <div class="pl-md-5 ml-md-5">
-                <span class="subheading">Company Overview</span>
-                <h2 class="mb-4">Learned about the Law</h2>
+                <span class="subheading"> Resumen de la empresa</span>
+                <h2 class="mb-4">{{ configuracion.nombre }}</h2>
               </div>
             </div>
             <div class="pl-md-5 ml-md-5 mb-5">
-              <p>
-                On her way she met a copy. The copy warned the Little Blind
-                Text, that where it came from it would have been rewritten a
-                thousand times and everything that was left from its origin
-                would be the word "and" and the Little Blind Text should turn
-                around and return to its own, safe country. But nothing the copy
-                said could convince her and so it didn’t take long until a few
-                insidious Copy Writers ambushed her, made her drunk with Longe
-                and Parole and dragged her into their agency, where they abused
-                her for their.
-              </p>
-              <p>
-                When she reached the first hills of the Italic Mountains, she
-                had a last view back on the skyline of her hometown
-                Bookmarksgrove, the headline of Alphabet Village and the subline
-                of her own road, the Line Lane. Pityful a rethoric question ran
-                over her cheek, then she continued her way.
-              </p>
-              <p>
-                <a href="#" class="btn-custom"
-                  >Learn More <span class="ion-ios-arrow-forward"></span
-                ></a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="ftco-section ftco-counter img"
-      id="section-counter"
-      style="background-image: url(images/bg_1.jpg)"
-    >
-      <div class="container">
-        <div class="row justify-content-center mb-3 pb-3">
-          <div
-            class="
-              col-md-7
-              text-center
-              heading-section heading-section-white
-              ftco-animate
-            "
-          >
-            <h2 class="mb-4">Some fun facts</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-10">
-            <div class="row">
-              <div
-                class="
-                  col-md-3
-                  d-flex
-                  justify-content-center
-                  counter-wrap
-                  ftco-animate
-                "
-              >
-                <div class="block-18 text-center">
-                  <div class="text">
-                    <strong class="number" data-number="9000">0</strong>
-                    <span>Happy Customers</span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="
-                  col-md-3
-                  d-flex
-                  justify-content-center
-                  counter-wrap
-                  ftco-animate
-                "
-              >
-                <div class="block-18 text-center">
-                  <div class="text">
-                    <strong class="number" data-number="10000">0</strong>
-                    <span>Properties</span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="
-                  col-md-3
-                  d-flex
-                  justify-content-center
-                  counter-wrap
-                  ftco-animate
-                "
-              >
-                <div class="block-18 text-center">
-                  <div class="text">
-                    <strong class="number" data-number="1000">0</strong>
-                    <span>Agents</span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="
-                  col-md-3
-                  d-flex
-                  justify-content-center
-                  counter-wrap
-                  ftco-animate
-                "
-              >
-                <div class="block-18 text-center">
-                  <div class="text">
-                    <strong class="number" data-number="100">0</strong>
-                    <span>Awards</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section testimony-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8 ftco-animate">
-            <div class="row ftco-animate">
-              <div class="col-md-12">
-                <div class="carousel-testimony owl-carousel ftco-owl">
-                  <div class="item">
-                    <div class="testimony-wrap py-4 pb-5">
-                      <div
-                        class="user-img mb-4"
-                        style="background-image: url(images/person_1.jpg)"
-                      >
-                        <span
-                          class="
-                            quote
-                            d-flex
-                            align-items-center
-                            justify-content-center
-                          "
-                        >
-                          <i class="icon-quote-left"></i>
-                        </span>
-                      </div>
-                      <div class="text text-center">
-                        <p class="mb-4">
-                          A small river named Duden flows by their place and
-                          supplies it with the necessary regelialia. It is a
-                          paradisematic country, in which roasted parts of
-                          sentences fly into your mouth.
-                        </p>
-                        <p class="name">Roger Scott</p>
-                        <span class="position">Clients</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-wrap py-4 pb-5">
-                      <div
-                        class="user-img mb-4"
-                        style="background-image: url(images/person_2.jpg)"
-                      >
-                        <span
-                          class="
-                            quote
-                            d-flex
-                            align-items-center
-                            justify-content-center
-                          "
-                        >
-                          <i class="icon-quote-left"></i>
-                        </span>
-                      </div>
-                      <div class="text text-center">
-                        <p class="mb-4">
-                          A small river named Duden flows by their place and
-                          supplies it with the necessary regelialia. It is a
-                          paradisematic country, in which roasted parts of
-                          sentences fly into your mouth.
-                        </p>
-                        <p class="name">Roger Scott</p>
-                        <span class="position">Agent</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-wrap py-4 pb-5">
-                      <div
-                        class="user-img mb-4"
-                        style="background-image: url(images/person_3.jpg)"
-                      >
-                        <span
-                          class="
-                            quote
-                            d-flex
-                            align-items-center
-                            justify-content-center
-                          "
-                        >
-                          <i class="icon-quote-left"></i>
-                        </span>
-                      </div>
-                      <div class="text text-center">
-                        <p class="mb-4">
-                          A small river named Duden flows by their place and
-                          supplies it with the necessary regelialia. It is a
-                          paradisematic country, in which roasted parts of
-                          sentences fly into your mouth.
-                        </p>
-                        <p class="name">Roger Scott</p>
-                        <span class="position">Client</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-wrap py-4 pb-5">
-                      <div
-                        class="user-img mb-4"
-                        style="background-image: url(images/person_1.jpg)"
-                      >
-                        <span
-                          class="
-                            quote
-                            d-flex
-                            align-items-center
-                            justify-content-center
-                          "
-                        >
-                          <i class="icon-quote-left"></i>
-                        </span>
-                      </div>
-                      <div class="text text-center">
-                        <p class="mb-4">
-                          A small river named Duden flows by their place and
-                          supplies it with the necessary regelialia. It is a
-                          paradisematic country, in which roasted parts of
-                          sentences fly into your mouth.
-                        </p>
-                        <p class="name">Roger Scott</p>
-                        <span class="position">Client</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-wrap py-4 pb-5">
-                      <div
-                        class="user-img mb-4"
-                        style="background-image: url(images/person_1.jpg)"
-                      >
-                        <span
-                          class="
-                            quote
-                            d-flex
-                            align-items-center
-                            justify-content-center
-                          "
-                        >
-                          <i class="icon-quote-left"></i>
-                        </span>
-                      </div>
-                      <div class="text text-center">
-                        <p class="mb-4">
-                          A small river named Duden flows by their place and
-                          supplies it with the necessary regelialia. It is a
-                          paradisematic country, in which roasted parts of
-                          sentences fly into your mouth.
-                        </p>
-                        <p class="name">Roger Scott</p>
-                        <span class="position">Client</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div
-              class="
-                col-md-7
-                text-center
-                heading-section heading-section-white
-                ftco-animate
-              "
-            >
-              <h2>Subcribe to our Newsletter</h2>
-              <p>
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts. Separated
-                they live in
-              </p>
-              <div class="row d-flex justify-content-center mt-5">
-                <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter email address"
-                      />
-                      <input
-                        type="submit"
-                        value="Subscribe"
-                        class="submit px-3"
-                      />
-                    </div>
-                  </form>
-                </div>
-              </div>
+              <p v-html="userdata.descripcion"></p>
             </div>
           </div>
         </div>
@@ -383,12 +56,83 @@
 </template>
 
 <script>
+import { BImg } from "bootstrap-vue";
+import { URL_LOCAL } from "../config.js";
+
 export default {
   name: "aboutComponent",
   data() {
     return {
+      search: "",
       msg: "Welcome to Your Vue.js App",
+      url: URL_LOCAL + "storage/",
     };
+  },
+  components: {
+    BImg,
+  },
+
+  created() {
+    let data = null;
+
+    if (this.$route.params.code) {
+      localStorage.setItem("code", this.$route.params.code);
+    } else {
+      data = localStorage.setItem("code", this.$route.params.code);
+    }
+
+    this.buscarInfo(data)
+  },
+
+  methods: {
+    buscarInfo(data) {
+      let code = null;
+      if (data == null) {
+        code = localStorage.getItem("code");
+      } else {
+        code = data;
+      }
+
+      this.$store
+        .dispatch("home/getInmuebles", code)
+        .then((data) => {
+          let response = data.inmuebles;
+          for (let i = 0; i < response.length; i++) {
+            if (response[i].estado_id != null) {
+              this.departamentos.push(response[i].estado_id);
+            }
+            if (response[i].ciudad_id != null) {
+              this.ciudades.push(response[i].ciudad_id);
+            }
+            if (response[i].tipo_negocio != null) {
+              this.tipo_negocio.push(response[i].tipo_negocio);
+            }
+            if (response[i].tipo_inmueble != null) {
+              this.tipo_inmueble.push(response[i].tipo_inmueble);
+            }
+          }
+
+          this.departamentos = this.deleteDuplicate(this.departamentos);
+          this.ciudades = this.deleteDuplicate(this.ciudades);
+          this.tipo_negocio = this.deleteDuplicate(this.tipo_negocio);
+          this.tipo_inmueble = this.deleteDuplicate(this.tipo_inmueble);
+        })
+        .catch(() => {});
+    },
+  },
+
+  computed: {
+    userdata() {
+      return this.$store.state.home.userdata;
+    },
+    configuracion() {
+      return this.$store.state.home.configuracion;
+    },
   },
 };
 </script>
+<style scoped>
+.width-img {
+  max-width: 100%;
+}
+</style>

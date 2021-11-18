@@ -10,6 +10,7 @@
 <script>
 import navComponent from "./layout/navComponent.vue";
 import footerComponent from "./layout/footerComponent.vue";
+import 'vue-select/dist/vue-select.css';
 
 export default {
   name: "App",
@@ -22,7 +23,9 @@ export default {
   
 };
 </script>
+<style lang="scss">
 
+</style>
 <style scoped>
 @import "assets/slitslider/css/style.css";
 

@@ -65,7 +65,7 @@ table{background-color: #fff;}
 .listing-detail span:hover{background: #72b70f;}
 
 
-.status.sold{background:rgba(104,167,13,0.8);}
+.status.sold{background:rgba(60, 61, 58, 0.8);}
 .status.new{background:rgba(190,7,46,0.8);}
 
 .recommended{position: relative;}
@@ -121,7 +121,7 @@ table{background-color: #fff;}
 
 
 /*footer*/
-.footer{background:url(./images/bg.jpg) #222; padding: 20px 0; color: #999;} 
+.footer{background:url(./images/bg.jpg) #222; padding: 20px 0; color: #999; margin-top: 6%;} 
 .footer h4{color: #fff;border-bottom: 2px solid #131313;margin-bottom: 10px;padding-bottom: 10px;}
 .footer ul{list-style: none;padding: 0; }
 .footer a:hover{color: #fff;}

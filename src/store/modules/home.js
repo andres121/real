@@ -21,7 +21,7 @@ export default {
       state.userdata = val;
     },
 
-   
+
   },
 
   actions: {
@@ -43,13 +43,39 @@ export default {
       });
     },
 
-    getInmueble(ctx, code ) {
-     
+    searchInmuebles(ctx, code) {
       return new Promise((resolve, reject) => {
         axios
           .get("api/inmueble_id/" + code)
           .then((response) => {
             resolve(response.data.data.inmueble);
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      });
+    },
+
+    getInmueble(ctx, code) {
+
+      return new Promise((resolve, reject) => {
+        axios
+          .get("api/inmueble_id/" + code)
+          .then((response) => {
+            resolve(response.data.data.inmueble);
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      });
+    },
+
+    filterInmueble(ctx, code) {
+      return new Promise((resolve, reject) => {
+        axios
+          .put("api/inmueble_filter/" + code.code, code.data)
+          .then((response) => {
+            resolve(response.data.data.inmuebles);
           })
           .catch((error) => {
             reject(error);
