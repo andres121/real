@@ -143,6 +143,7 @@ export default {
     },
 
     addContact() {
+      this.data.user_id = this.userdata.id;
       if (this.data.email == null) {
         this.messageAlert("Correo es obligatorio");
       }
@@ -165,16 +166,23 @@ export default {
         this.$store
           .dispatch("contact/addContact", this.data)
           .then((data) => {
-            this.$swal({
-              title: "Muy bien!!!",
-              text: "Nos pondremos en contacto con tigo",
-              icon: "info",
-              customClass: {
-                confirmButton: "btn btn-primary",
-              },
-              confirmButtonText: "Aceptar",
-              buttonsStyling: false,
-            });
+            (this.data = {
+              user_id: null,
+              full_name: null,
+              email: null,
+              celular: null,
+              message: null,
+            }),
+              this.$swal({
+                title: "Muy bien!!!",
+                text: "Nos pondremos en contacto con tigo",
+                icon: "info",
+                customClass: {
+                  confirmButton: "btn btn-primary",
+                },
+                confirmButtonText: "Aceptar",
+                buttonsStyling: false,
+              });
           })
           .catch((error) => {
             this.messageAlert("Algo salio mal");

@@ -384,6 +384,11 @@ export default {
   color: aliceblue;
   opacity: 0.7;
 }
+.img-responsive{
+  min-width: 100%;
+  min-height: 20rem;
+  max-width: 100%;
+}
 </style>
 
 <style lang="scss">

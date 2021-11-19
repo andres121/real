@@ -6,10 +6,10 @@
           <div class="col-lg-3 col-sm-3">
             <h4>Contacto</h4>
             <p>
-              <b>{{ userdata.primer_nombre }}</b
+              <b>{{ configuracion.nombre }}</b
               ><br />
               <span class="glyphicon glyphicon-map-marker"></span>
-              {{ userdata.direccion_persona }} <br />
+              {{ configuracion.direccion }} <br />
               <span class="glyphicon glyphicon-envelope"></span>
               {{ userdata.email }}<br />
               <span class="glyphicon glyphicon-earphone"></span>
