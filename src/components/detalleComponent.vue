@@ -9,6 +9,41 @@
 
     <b-container>
       <div class="properties-listing spacer">
+       <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="la.jpg" alt="Los Angeles">
+    </div>
+
+    <div class="item">
+      <img src="chicago.jpg" alt="Chicago">
+    </div>
+
+    <div class="item">
+      <img src="ny.jpg" alt="New York">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
         <vue-flux
           :options="fluxOptions"
           :images="fluxImages"
@@ -41,10 +76,12 @@
                   <div class="property-info">
                     <strong>
                       <span v-if="inmueble.tipo_negocio.tipo == 'Venta'">
-                        <p class="price">${{ inmueble.precio_venta }}</p>
+                        <p class="price-1">
+                          ${{ inmueble.precio_venta | priceFormattin }}
+                        </p>
                       </span>
-                      <p v-else class="price">
-                        ${{ inmueble.precio_alquiler }}
+                      <p v-else class="price-1">
+                        ${{ inmueble.precio_alquiler | priceFormattin }}
                       </p></strong
                     >
 
@@ -144,6 +181,14 @@ export default {
     this.buscarInfo();
   },
 
+  filters: {
+    priceFormattin: function (value) {
+      let format = parseInt(value);
+      let dollarUSLocale = Intl.NumberFormat("es-CO");
+      let price = dollarUSLocale.format(format);
+      return price;
+    },
+  },
   methods: {
     addMarker() {
       const marker = {
@@ -161,6 +206,7 @@ export default {
     onSlideEnd(slide) {
       this.sliding = false;
     },
+    
 
     buscarInfo() {
       this.$store
@@ -178,8 +224,9 @@ export default {
     },
 
     whatsappLink() {
+      console.log(this.userdata)
       var url =
-        "https://api.whatsapp.com/send?phone=" +
+        "https://api.whatsapp.com/send?phone=" + '+57' +
         this.userdata.celular_whatsapp +
         "&text=" +
         "";
@@ -192,7 +239,7 @@ export default {
 <style>
 .price-1 {
   font-size: 28px;
-  color: #72b70f;
+  color: #272726;
   padding: 0;
   border-radius: 5px;
 }

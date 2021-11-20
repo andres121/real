@@ -46,7 +46,7 @@
               </div>
             </div>
             <div class="pl-md-5 ml-md-5 mb-5">
-              <p v-html="userdata.descripcion"></p>
+              <p v-if="configuracion.descripcion != null" v-html="configuracion.descripcion"></p>
             </div>
           </div>
         </div>

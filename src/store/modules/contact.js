@@ -19,7 +19,7 @@ export default {
         addContact(ctx, contact) {
             return new Promise((resolve, reject) => {
                 axios
-                    .post('api/contact/', contact)
+                    .post('api/contact', contact)
                     .then(response => resolve(response))
                     .catch(error => reject(error))
             })

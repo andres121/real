@@ -1,8 +1,9 @@
 <template>
   <div class="navbar-wrapper">
+    
     <div class="navbar-inverse" role="navigation">
       <div class="container">
-        <div class="navbar-header">
+        <!-- <div class="navbar-header">
           <button
             type="button"
             class="navbar-toggle collapsed"
@@ -14,7 +15,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        </div>
+        </div> -->
 
         <!-- Nav Starts -->
 
@@ -27,20 +28,24 @@
         <div class="header">
           <a href="index.php"
             ><img
-              style="max-width: 10%; max-height: 7%"
+              class="img-hedder"
               :src="url + configuracion.logo"
               alt="Realestate"
           /></a>
 
           <ul class="pull-right">
             <li>
-              <b-button @click="enlace('inicio')">inicio</b-button>
+              <b-button size="sm" @click="enlace('inicio')">inicio</b-button>
             </li>
             <li>
-              <b-button @click="enlace('nosotros')">Nosotros</b-button>
+              <b-button size="sm" @click="enlace('nosotros')"
+                >Nosotros</b-button
+              >
             </li>
             <li>
-              <b-button @click="enlace('contactanos')">Contactanos</b-button>
+              <b-button size="sm" @click="enlace('contactanos')"
+                >Contactanos</b-button
+              >
             </li>
             <!-- <li><a href="buysalerent.php">Sale</a></li>
           <li><a href="buysalerent.php">Rent</a></li> -->
@@ -71,6 +76,9 @@ export default {
     },
   },
 
+  created() {
+  },
+
   methods: {
     enlace(data) {
       if (data == "inicio") {
@@ -81,7 +89,7 @@ export default {
           .push("/about/" + this.userdata.referral_code)
           .catch(() => {});
       }
-       if (data == "contactanos") {
+      if (data == "contactanos") {
         this.$router
           .push("/contactanos/" + this.userdata.referral_code)
           .catch(() => {});
@@ -92,6 +100,17 @@ export default {
 </script>
 
 <style>
+.img-hedder {
+  max-width: 10%;
+  max-height: 7;
+}
+@media only screen and (max-width: 800px) {
+  .img-hedder {
+    max-width: 50%;
+    max-height: 7;
+  }
+}
+
 .hero {
   height: 100vh;
   width: 100%;
