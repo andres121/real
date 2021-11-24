@@ -9,49 +9,20 @@
 
     <b-container>
       <div class="properties-listing spacer">
-       <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="la.jpg" alt="Los Angeles">
-    </div>
-
-    <div class="item">
-      <img src="chicago.jpg" alt="Chicago">
-    </div>
-
-    <div class="item">
-      <img src="ny.jpg" alt="New York">
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
-        <vue-flux
+        <VueSlickCarousel :arrows="true" :dots="true">
+          <div v-for="img in inmueble.inmueble_imagenes" :key="img.id">
+            <b-img :src="url + img.url" class="img-width-detalle"></b-img>
+          </div>
+         
+        </VueSlickCarousel>
+        <!-- <vue-flux
           :options="fluxOptions"
           :images="fluxImages"
           :transitions="fluxTransitions"
           ref="slider"
         >
           <flux-pagination slot="pagination"></flux-pagination>
-        </vue-flux>
+        </vue-flux> -->
       </div>
       <div class="properties-listing spacer">
         <div class="row">
@@ -95,7 +66,8 @@
                       Agente
                       <p>
                         {{ userdata.primer_nombre }}<br />
-                        {{ userdata.celular_movil }}
+                        {{ userdata.celular_movil }}<br />
+                        {{ userdata.email }}
                       </p>
                     </div>
                   </div>
@@ -142,24 +114,29 @@
 // import { BCarousel } from "bootstrap-vue";
 import { URL_LOCAL } from "../config.js";
 import "hooper/dist/hooper.css";
-import { VueFlux, FluxPagination, Transitions } from "vue-flux";
+// import { VueFlux, FluxPagination, Transitions } from "vue-flux";
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
+// optional style for arrows & dots
+import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
 export default {
   components: {
     // BCarousel,
 
-    VueFlux,
-    FluxPagination,
+    // VueFlux,
+    // FluxPagination,
+    VueSlickCarousel,
   },
   data() {
     return {
-      fluxOptions: {
-        autoplay: true,
-      },
-      fluxImages: [],
-      fluxTransitions: {
-        transitionBook: Transitions.transitionBook,
-      },
+      // fluxOptions: {
+      //   autoplay: true,
+      // },
+      // fluxImages: [],
+      // fluxTransitions: {
+      //   transitionBook: Transitions.transitionBook,
+      // },
       slide: 0,
       sliding: null,
       url: URL_LOCAL + "storage/",
@@ -182,7 +159,7 @@ export default {
   },
 
   filters: {
-    priceFormattin: function (value) {
+    priceFormattin: function(value) {
       let format = parseInt(value);
       let dollarUSLocale = Intl.NumberFormat("es-CO");
       let price = dollarUSLocale.format(format);
@@ -206,15 +183,14 @@ export default {
     onSlideEnd(slide) {
       this.sliding = false;
     },
-    
 
     buscarInfo() {
       this.$store
         .dispatch("home/getInmueble", this.$route.params.id)
         .then((res) => {
-          for (let i = 0; i < res.inmueble_imagenes.length; i++) {
-            this.fluxImages.push(this.url + res.inmueble_imagenes[i].url);
-          }
+          // for (let i = 0; i < res.inmueble_imagenes.length; i++) {
+          //   this.fluxImages.push(this.url + res.inmueble_imagenes[i].url);
+          // }
 
           this.inmueble = res;
 
@@ -224,9 +200,10 @@ export default {
     },
 
     whatsappLink() {
-      console.log(this.userdata)
+      console.log(this.userdata);
       var url =
-        "https://api.whatsapp.com/send?phone=" + '+57' +
+        "https://api.whatsapp.com/send?phone=" +
+        "+57" +
         this.userdata.celular_whatsapp +
         "&text=" +
         "";
@@ -242,5 +219,10 @@ export default {
   color: #272726;
   padding: 0;
   border-radius: 5px;
+}
+.img-width-detalle{
+  width: 100%;
+  min-width: 100%;
+  max-height: 45em;
 }
 </style>
