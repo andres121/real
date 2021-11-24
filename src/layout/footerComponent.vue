@@ -11,9 +11,9 @@
               <span class="glyphicon glyphicon-map-marker"></span>
               {{ configuracion.direccion }} <br />
               <span class="glyphicon glyphicon-envelope"></span>
-              {{ userdata.email }}<br />
+              {{ configuracion.empresa_emails[0].email }}<br />
               <span class="glyphicon glyphicon-earphone"></span>
-              {{ userdata.celular_movil }}
+              {{ configuracion.empresa_numbers[0].number }}
             </p>
           </div>
           <div class="col-lg-3 col-sm-3">
